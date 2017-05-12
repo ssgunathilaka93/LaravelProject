@@ -5538,5 +5538,131 @@
             "updivision",
             "users roles admin"
         ]
+    },
+    {
+        "name": "owen-it/laravel-auditing",
+        "version": "v4.0.5",
+        "version_normalized": "4.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/owen-it/laravel-auditing.git",
+            "reference": "d6219df4c035a9cea54b0b2294d983651bf65516"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/owen-it/laravel-auditing/zipball/d6219df4c035a9cea54b0b2294d983651bf65516",
+            "reference": "d6219df4c035a9cea54b0b2294d983651bf65516",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/console": "~5.2",
+            "illuminate/database": "~5.2",
+            "illuminate/filesystem": "~5.2",
+            "php": ">=5.5.9"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9.4",
+            "orchestra/testbench": "^3.2",
+            "phpunit/phpunit": "^4.0"
+        },
+        "suggest": {
+            "laravelista/lumen-vendor-publish": "Needed to publish the package configuration in Lumen"
+        },
+        "time": "2017-05-03T09:21:04+00:00",
+        "type": "package",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "OwenIt\\Auditing\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Quetzy Garcia",
+                "email": "quetzyg@altek.org"
+            },
+            {
+                "name": "Antério Vieira",
+                "email": "anteriovieira@gmail.com"
+            },
+            {
+                "name": "Raphael França",
+                "email": "raphaelfrancabsb@gmail.com"
+            }
+        ],
+        "description": "Audit changes of your Eloquent models in Laravel/Lumen",
+        "homepage": "https://laravel-auditing.com",
+        "keywords": [
+            "Audit",
+            "activity",
+            "auditing",
+            "change",
+            "eloquent",
+            "history",
+            "laravel",
+            "log",
+            "logging",
+            "lumen",
+            "observer",
+            "record",
+            "track"
+        ]
+    },
+    {
+        "name": "laravelista/lumen-vendor-publish",
+        "version": "2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravelista/lumen-vendor-publish.git",
+            "reference": "51af71ad84007ae94fdf80b4aaf78fd981a62289"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravelista/lumen-vendor-publish/zipball/51af71ad84007ae94fdf80b4aaf78fd981a62289",
+            "reference": "51af71ad84007ae94fdf80b4aaf78fd981a62289",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/console": "^5.0",
+            "illuminate/filesystem": "^5.0",
+            "illuminate/support": "^5.0",
+            "league/flysystem": "^1.0"
+        },
+        "time": "2016-09-25T10:55:42+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Laravelista\\LumenVendorPublish\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mario Bašić",
+                "email": "mario.basic@outlook.com"
+            }
+        ],
+        "description": "vendor:publish for Lumen framework.",
+        "keywords": [
+            "command",
+            "console",
+            "lumen",
+            "publish",
+            "vendor"
+        ]
     }
 ]

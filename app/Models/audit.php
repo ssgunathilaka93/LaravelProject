@@ -4,13 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
-use OwenIt\Auditing\Auditable;
-use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 
-class message extends Model implements AuditableContract
+class audit extends Model
 {
     use CrudTrait;
-	use Auditable;
 
      /*
     |--------------------------------------------------------------------------
@@ -18,14 +15,13 @@ class message extends Model implements AuditableContract
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'messages';
+    protected $table = 'audits';
     //protected $primaryKey = 'id';
+    // public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['operator' , 'message'];
+    // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
-	
-    public $timestamps = true;
 
     /*
     |--------------------------------------------------------------------------

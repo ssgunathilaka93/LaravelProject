@@ -38,6 +38,7 @@
     34 => 'Cviebrock\\EloquentSluggable\\ServiceProvider',
     35 => 'Backpack\\PageManager\\PageManagerServiceProvider',
     36 => 'Backpack\\PermissionManager\\PermissionManagerServiceProvider',
+    37 => 'OwenIt\\Auditing\\AuditingServiceProvider',
   ),
   'eager' => 
   array (
@@ -158,6 +159,7 @@
     'validator' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'validation.presence' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'command.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
+    'OwenIt\\Auditing\\Contracts\\Auditor' => 'OwenIt\\Auditing\\AuditingServiceProvider',
   ),
   'when' => 
   array (
@@ -198,6 +200,9 @@
     array (
     ),
     'Laravel\\Tinker\\TinkerServiceProvider' => 
+    array (
+    ),
+    'OwenIt\\Auditing\\AuditingServiceProvider' => 
     array (
     ),
   ),

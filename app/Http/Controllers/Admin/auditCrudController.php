@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\messageRequest as StoreRequest;
-use App\Http\Requests\messageRequest as UpdateRequest;
+use App\Http\Requests\auditRequest as StoreRequest;
+use App\Http\Requests\auditRequest as UpdateRequest;
 
-class messageCrudController extends CrudController
+class auditCrudController extends CrudController
 {
     public function setup()
     {
@@ -18,9 +18,9 @@ class messageCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\message');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/message');
-        $this->crud->setEntityNameStrings('message', 'messages');
+        $this->crud->setModel('App\Models\audit');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/audit');
+        $this->crud->setEntityNameStrings('audit', 'audits');
 
         /*
         |--------------------------------------------------------------------------
@@ -28,34 +28,9 @@ class messageCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        //$this->crud->setFromDb();
+        $this->crud->setFromDb();
 		
-		//$this->crud->setColumns(['operator']);
-		//$this->crud->setColumns(['message']);
-		$this->crud->setFromDb(); 
-		//$this->crud->setColumns(['created_at']);
-		if(auth()->user()->hasRole('admin')){
-			$this->crud->addColumns(['created_at' , 'updated_at']);
-		}
-		
-        $this->crud->addField([
-			'name'        => 'operator',
-			'label'       => 'Message Provider', 
-			'type'        => 'radio',
-			'options'     => [
-								"Mobitel" => "Mobitel",
-								"Dialog" => "Dialog"
-							],
-			'inline'      => true,
-		]);
-		
-        $this->crud->addField([
-		'name' => 'message',
-		'label' => "Message",
-		'type' => 'textarea'
-		]);
-		
-		
+		$this->crud->removeAllButtons();
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');

@@ -43,6 +43,7 @@
 			  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/permission') }}"><i class="fa fa-key"></i> <span>Permissions</span></a></li>
 			</ul>
 		  </li>
+		  <li><a href="{{ url('admin/audit') }}"><i class="fa fa-files-o"></i> <span>Audits</span></a></li>
 		  @endrole
 		  <li><a href="{{ url('admin/tag') }}"><i class="fa fa-tag"></i> <span>Manage Tags</span></a></li>
 		</ul>

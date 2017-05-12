@@ -70,6 +70,10 @@ class ComposerStaticInit3a22c6900be4a34cbc7c307c1e148523
             'Prologue\\Alerts\\' => 16,
             'PhpParser\\' => 10,
         ),
+        'O' => 
+        array (
+            'OwenIt\\Auditing\\' => 16,
+        ),
         'M' => 
         array (
             'Monolog\\' => 8,
@@ -78,6 +82,7 @@ class ComposerStaticInit3a22c6900be4a34cbc7c307c1e148523
         array (
             'League\\Flysystem\\Cached\\' => 24,
             'League\\Flysystem\\' => 17,
+            'Laravelista\\LumenVendorPublish\\' => 31,
             'Laravel\\Tinker\\' => 15,
             'Laracasts\\Generators\\' => 21,
         ),
@@ -250,6 +255,10 @@ class ComposerStaticInit3a22c6900be4a34cbc7c307c1e148523
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'OwenIt\\Auditing\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/owen-it/laravel-auditing/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -261,6 +270,10 @@ class ComposerStaticInit3a22c6900be4a34cbc7c307c1e148523
         'League\\Flysystem\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
+        ),
+        'Laravelista\\LumenVendorPublish\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravelista/lumen-vendor-publish/src',
         ),
         'Laravel\\Tinker\\' => 
         array (
@@ -452,16 +465,23 @@ class ComposerStaticInit3a22c6900be4a34cbc7c307c1e148523
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Admin\\messageCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/messageCrudController.php',
+        'App\\Http\\Controllers\\Admin\\tagCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/tagCrudController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\customSajja\\firstController' => __DIR__ . '/../..' . '/app/Http/Controllers/CustomSajja/crudSajjaController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\messageRequest' => __DIR__ . '/../..' . '/app/Http/Requests/messageRequest.php',
+        'App\\Http\\Requests\\tagRequest' => __DIR__ . '/../..' . '/app/Http/Requests/tagRequest.php',
+        'App\\Models\\message' => __DIR__ . '/../..' . '/app/Models/message.php',
+        'App\\Models\\tag' => __DIR__ . '/../..' . '/app/Models/tag.php',
         'App\\PageTemplates' => __DIR__ . '/../..' . '/app/PageTemplates.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -517,7 +537,9 @@ class ComposerStaticInit3a22c6900be4a34cbc7c307c1e148523
         'Backpack\\CRUD\\app\\Http\\Controllers\\CrudFeatures\\Revisions' => __DIR__ . '/..' . '/backpack/crud/src/app/Http/Controllers/CrudFeatures/Revisions.php',
         'Backpack\\CRUD\\app\\Http\\Controllers\\CrudFeatures\\SaveActions' => __DIR__ . '/..' . '/backpack/crud/src/app/Http/Controllers/CrudFeatures/SaveActions.php',
         'Backpack\\CRUD\\app\\Http\\Controllers\\CrudFeatures\\ShowDetailsRow' => __DIR__ . '/..' . '/backpack/crud/src/app/Http/Controllers/CrudFeatures/ShowDetailsRow.php',
+        'Backpack\\CRUD\\app\\Http\\Controllers\\MessageController' => __DIR__ . '/..' . '/backpack/crud/src/app/Http/Controllers/Admin/MessageController.php',
         'Backpack\\CRUD\\app\\Http\\Requests\\CrudRequest' => __DIR__ . '/..' . '/backpack/crud/src/app/Http/Requests/CrudRequest.php',
+        'Backpack\\CRUD\\app\\Http\\Requests\\MessageRequest' => __DIR__ . '/..' . '/backpack/crud/src/app/Http/Requests/MessageRequest.php',
         'Backpack\\Generators\\Console\\Commands\\ConfigBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/ConfigBackpackCommand.php',
         'Backpack\\Generators\\Console\\Commands\\CrudBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/CrudBackpackCommand.php',
         'Backpack\\Generators\\Console\\Commands\\CrudControllerBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/CrudControllerBackpackCommand.php',
@@ -595,8 +617,10 @@ class ComposerStaticInit3a22c6900be4a34cbc7c307c1e148523
         'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
+        'CreateAuditsTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_12_161743_create_audits_table.php',
         'CreatePagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_25_121918_create_pages_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreatePermissionTables' => __DIR__ . '/../..' . '/database/migrations/2016_05_10_130540_create_permission_tables.php',
         'CreateRevisionsTable' => __DIR__ . '/..' . '/venturecraft/revisionable/src/migrations/2013_04_09_062329_create_revisions_table.php',
         'CreateSettingsTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_131614_create_settings_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
@@ -2321,6 +2345,7 @@ class ComposerStaticInit3a22c6900be4a34cbc7c307c1e148523
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
         'Laravel\\Tinker\\TinkerServiceProvider' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerServiceProvider.php',
+        'Laravelista\\LumenVendorPublish\\VendorPublishCommand' => __DIR__ . '/..' . '/laravelista/lumen-vendor-publish/src/VendorPublishCommand.php',
         'League\\Flysystem\\AdapterInterface' => __DIR__ . '/..' . '/league/flysystem/src/AdapterInterface.php',
         'League\\Flysystem\\Adapter\\AbstractAdapter' => __DIR__ . '/..' . '/league/flysystem/src/Adapter/AbstractAdapter.php',
         'League\\Flysystem\\Adapter\\AbstractFtpAdapter' => __DIR__ . '/..' . '/league/flysystem/src/Adapter/AbstractFtpAdapter.php',
@@ -2538,6 +2563,22 @@ class ComposerStaticInit3a22c6900be4a34cbc7c307c1e148523
         'Monolog\\Processor\\UidProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/UidProcessor.php',
         'Monolog\\Processor\\WebProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php',
         'Monolog\\Registry' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Registry.php',
+        'OwenIt\\Auditing\\Auditable' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Auditable.php',
+        'OwenIt\\Auditing\\AuditableObserver' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/AuditableObserver.php',
+        'OwenIt\\Auditing\\AuditingServiceProvider' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/AuditingServiceProvider.php',
+        'OwenIt\\Auditing\\Auditor' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Auditor.php',
+        'OwenIt\\Auditing\\Console\\AuditDriverMakeCommand' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Console/AuditDriverMakeCommand.php',
+        'OwenIt\\Auditing\\Console\\AuditTableCommand' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Console/AuditTableCommand.php',
+        'OwenIt\\Auditing\\Console\\InstallCommand' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Console/InstallCommand.php',
+        'OwenIt\\Auditing\\Contracts\\AuditDriver' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Contracts/AuditDriver.php',
+        'OwenIt\\Auditing\\Contracts\\Auditable' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Contracts/Auditable.php',
+        'OwenIt\\Auditing\\Contracts\\Auditor' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Contracts/Auditor.php',
+        'OwenIt\\Auditing\\Contracts\\UserResolver' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Contracts/UserResolver.php',
+        'OwenIt\\Auditing\\Drivers\\Database' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Drivers/Database.php',
+        'OwenIt\\Auditing\\Events\\Audited' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Events/Audited.php',
+        'OwenIt\\Auditing\\Events\\Auditing' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Events/Auditing.php',
+        'OwenIt\\Auditing\\Facades\\Auditor' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Facades/Auditor.php',
+        'OwenIt\\Auditing\\Models\\Audit' => __DIR__ . '/..' . '/owen-it/laravel-auditing/src/Models/Audit.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
         'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',

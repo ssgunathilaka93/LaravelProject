@@ -4,3 +4,5 @@
 CRUD::resource('tag', 'tagCrudController');
 
 CRUD::resource('message', 'messageCrudController');
+
+CRUD::resource('audit', 'auditCrudController');
