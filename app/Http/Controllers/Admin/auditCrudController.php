@@ -10,6 +10,12 @@ use App\Http\Requests\auditRequest as UpdateRequest;
 
 class auditCrudController extends CrudController
 {
+	
+	public function __construct() {
+		$this->middleware('accessPages');
+		parent::__construct();
+	}
+	
     public function setup()
     {
 

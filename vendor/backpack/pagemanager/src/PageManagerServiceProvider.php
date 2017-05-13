@@ -50,7 +50,7 @@ class PageManagerServiceProvider extends ServiceProvider
     public function setupRoutes(Router $router)
     {
         // Admin Interface Routes
-        Route::group(['middleware' => ['web', 'admin'], 'prefix' => config('backpack.base.route_prefix', 'admin')], function () {
+        Route::group(['middleware' => ['web', 'admin' , 'accessPages'], 'prefix' => config('backpack.base.route_prefix', 'admin')], function () {
             $controller = config('backpack.pagemanager.admin_controller_class', $this->adminControllerClass);
 
             // Backpack\PageManager routes

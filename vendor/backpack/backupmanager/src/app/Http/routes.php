@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middleware' => ['web', 'auth']], function () {
+Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middleware' => ['web', 'auth' , 'accessPages']], function () {
 
     // Backup
     Route::get('backup', 'BackupController@index');
