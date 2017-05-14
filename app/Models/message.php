@@ -21,7 +21,7 @@ class message extends Model implements AuditableContract
     protected $table = 'messages';
     //protected $primaryKey = 'id';
     // protected $guarded = ['id'];
-     protected $fillable = ['operator' , 'message'];
+     protected $fillable = ['operator' , 'message' , 'u_id'];
     // protected $hidden = [];
     // protected $dates = [];
 	
@@ -38,6 +38,11 @@ class message extends Model implements AuditableContract
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+	
+	public function user()
+    {
+		return $this->belongsTo('App\User', 'u_id');
+    }
 
     /*
     |--------------------------------------------------------------------------

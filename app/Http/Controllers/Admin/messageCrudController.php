@@ -32,9 +32,34 @@ class messageCrudController extends CrudController
 		
 		//$this->crud->setColumns(['operator']);
 		//$this->crud->setColumns(['message']);
-		$this->crud->setFromDb(); 
+		//$this->crud->setFromDb(); 
 		//$this->crud->setColumns(['created_at']);
+		
+		$this->crud->setColumns([
+            [
+                'name'  => 'operator',
+                'label' => 'Operator',
+                'type'  => 'text',
+            ],
+            [
+                'name'  => 'message',
+                'label' => 'Message',
+                'type'  => 'text',
+            ],
+        ]);
+		
 		if(auth()->user()->hasRole('admin')){
+			
+			 $this->crud->addColumn(
+			 [  
+			   'label' => "User",
+			   'type' => 'select',
+			   'name' => 'u_id', // the db column for the foreign key
+			   'entity' => 'user', // the method that defines the relationship in your Model
+			   'attribute' => 'name', // foreign key attribute that is shown to user
+			   'model' => "Models\User" // foreign key model
+			 ]);
+			
 			$this->crud->addColumns(['created_at' , 'updated_at']);
 		}
 		
@@ -54,6 +79,15 @@ class messageCrudController extends CrudController
 		'label' => "Message",
 		'type' => 'textarea'
 		]);
+		
+		$this->crud->addField([
+			'name'  => 'u_id', 
+			'type'  => 'hidden', 
+			'value' => auth()->user()->id,
+		]);
+		if(auth()->user()->hasRole('contributor')){
+			$this->crud->addClause('where', 'u_id', '=', auth()->user()->id);
+		}
 		
 		
 
