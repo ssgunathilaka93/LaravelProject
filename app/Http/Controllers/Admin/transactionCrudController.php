@@ -4,12 +4,47 @@ namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
+use app\Models\account;
+use app\Models\transaction;
+use app\Models\client;
+use Illuminate\Support\Facades\DB;
+
 // VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\transactionRequest as StoreRequest;
 use App\Http\Requests\transactionRequest as UpdateRequest;
 
 class transactionCrudController extends CrudController
 {
+	
+	public function show($id)
+    {
+		
+		$sajja = transaction::with('auth_account')->where('id' , $id)->get();
+		//echo $sajja;
+		//echo "-----------------------------------------";
+		$phone = json_decode($sajja[0])->auth_account->mobile;
+		
+		
+		$acoount_details = account::with('transaction_relation')->where('mobile' , $phone)->get();
+		//echo $acoount_details;
+		
+		//echo "-----------------------------------------";
+		
+		$totAmount = DB::table('authorized_account')
+					 ->leftJoin('transaction', 'authorized_account.id', '=', 'transaction.account')
+                     ->select(DB::raw('authorized_account.client , sum(transaction.amount) as Tot_amount , max(transaction.request_time) as last_charge'))
+					 ->where('authorized_account.mobile', $phone)
+                     ->groupBy('authorized_account.client')
+                     ->get();
+		//echo $totAmount;
+		
+		$this->data['data1'] = $sajja;
+		$this->data['data2'] = $acoount_details;
+		$this->data['data3'] = $totAmount;
+		
+        return view('customSajith.clientDetails', $this->data);
+    }
+	
     public function setup()
     {
 
@@ -33,7 +68,7 @@ class transactionCrudController extends CrudController
 		
 		$this->crud->setColumns([
 			[
-				'label' => "ID",
+				'label' => "Transaction ID",
 				'name' => 'id',
 			],
             [
@@ -47,6 +82,15 @@ class transactionCrudController extends CrudController
                 'type'  => 'text',
             ],
         ]);
+		
+		$this->crud->addColumn([  // Select
+		   'label' => "Mobile No",
+		   'type' => 'select',
+		   'name' => 'account', // the db column for the foreign key
+		   'entity' => 'auth_account', // the method that defines the relationship in your Model
+		   'attribute' => 'mobile', // foreign key attribute that is shown to user
+		   'model' => "App\Models\account" // foreign key model
+		]);
 		
 		$this->crud->addColumn(
 		/**[	   'label' => "API KEY",
@@ -67,7 +111,11 @@ class transactionCrudController extends CrudController
 			'model' => "Models\account", // foreign key model
 		]);
 		
-		 $this->crud->removeAllButtons();
+		$this->crud->allowAccess(['show']);
+        $this->crud->denyAccess(['create', 'update', 'reorder', 'delete']);
+		
+		
+		 //$this->crud->removeAllButtons();
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');

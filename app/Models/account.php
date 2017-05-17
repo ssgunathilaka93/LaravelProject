@@ -19,7 +19,7 @@ class account extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['client' , 'mobile'];
+     //protected $fillable = ['client' , 'mobile'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -38,6 +38,11 @@ class account extends Model
 	public function client()
     {
 		return $this->belongsTo('App\Models\Client', 'client');
+    }
+	
+	public function transaction_relation()
+    {
+		return $this->hasMany('App\Models\transaction', 'account');
     }
 
     /*

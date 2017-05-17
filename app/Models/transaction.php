@@ -16,7 +16,7 @@ class transaction extends Model
     */
 
     protected $table = 'transaction';
-    protected $primaryKey = 'account';
+    //protected $primaryKey = 'account';
     // public $timestamps = false;
     // protected $guarded = ['id'];
      protected $fillable = [];
@@ -35,10 +35,10 @@ class transaction extends Model
     |--------------------------------------------------------------------------
     */
 	
-	/**public function account()
+	public function auth_account()
     {
-		return $this->belongsTo('App\Models\account', 'acoount');
-	}*/
+		return $this->belongsTo('App\Models\account', 'account');
+	}
 	
 	public function client()
     {
